@@ -85,7 +85,7 @@ password: 123456
 
 | command | description |
 |---------|-------------|
-| `npm start` | Open server in port 8080 |
+| `npm run dev` | Open server in port 8080 |
 | `npm run build` | Build project mode production in `/public` |
 | `npm run watch` | Build project mode development in `/public` and recompile whenever they change |
 | `npm run lint` | Linter Standard |
