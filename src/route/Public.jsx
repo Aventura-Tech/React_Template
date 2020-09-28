@@ -2,7 +2,7 @@ import { Router } from '@reach/router'
 import React, { lazy, Suspense } from 'react'
 import Loading from '../Components/Loading'
 
-const Session = lazy(() => import('../pages/Session'))
+const Session = lazy(() => import('../Modules/Session'))
 
 /**
  * Public Routes, only visible when there is no session

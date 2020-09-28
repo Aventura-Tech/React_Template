@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { fadeIn } from '../../../config/Config.style'
+import { fadeIn } from '../../../../config/Config.style'
 
 export const HomeStyled = styled.div`
   animation: ${fadeIn} 1s ease;

@@ -1,6 +1,8 @@
 React Template
 ====================
 
+ (Updating...)
+
 ### <a>Install</a>
 
 ```
@@ -134,129 +136,6 @@ Is recommendable use `lazy` for import yours pages.
 ```js
 const Home = lazy(() => import('../Pages/Home'))
 const Session = lazy(() => import('../pages/Session'))
-```
-
-### <a>Register Model</a>
-
-In `/src/App/Register.js` you can register yours models for each Pages
-
-```
-|- Pages
-|   |- Session
-|   |   |- index.jsx
-|   |   |- Model
-|   |   |   |- index.js
-|   |   |   |- listen.js
-|   |   |   |- init.js
-|   |   |   |- fail.js
-|   |   |- Session.style.js
-|   |- Home
-|   |   |- index.jsx
-|   |   |- Model
-|   |   |   |- index.js
-|   |   |   |- listen.js
-|   |   |   |- init.js
-|   |   |   |- fail.js
-|   |   |- Home.style.js
-```
-
-```js
-import Redity from 'redity'
-import Session from '../Pages/Session/Model'
-import Home from '../Pages/Home/Model'
-// Register your models
-Redity.register('session', Session)
-Redity.register('home', Home)
-
-export default Redity
-```
-
-### <a>Configuration</a>
-
-Configuration Globals of the App. You can to create more configurations and styles too.
-
-```
-|- config
-|   |- App.js
-|   |- Config.style.js
-```
-
-### <a>Session</a>
-
-Configure Session connecting to any API
-
-```
-|- Pages
-|   |- Session
-|   |   |- index.jsx
-|   |   |- Model
-|   |   |   |- index.js
-|   |   |   |- listen.js
-|   |   |   |- init.js
-|   |   |   |- fail.js
-|   |   |- Session.style.js
-```
-
-`response`
-
-```
-access_token: "token"
-created_at: 1578892347
-expire_in: 1578902346
-```
-
-`payload`
-
-```js
-{
-  username: 'string',
-  passoword: 'string'
-}
-```
-
-`Session/Model/listen.js`
-
-```js
-const res = await API.post('/login', payload)
-const expireIn = res.data.result.expire_in - res.data.result.created_at // Time Total for expire (s)
-const access_token = res.data.access_token
-```
-
-Don't forget `API_BASE_URL` of `.env`
-
-```
-API_BASE_URL=http://MyAPi.com/api
-```
-
-### <a>Testing</a>
-
-Testing for the pages and components
-
-```
-|- test
-|   |- Components
-|   |   |- Loading.test.jsx
-|   |- Pages
-|   |   |- Home.test.js
-```
-
-Don't forget import `Register` for your testing pages.
-
-```jsx
-import React from 'react'
-import { create } from 'react-test-renderer'
-import '../../src/App/Register' // this
-import Home from '../../src/Pages/Home'
-
-describe('Home', () => {
-  it('First Test', () => {
-    const root = create(<Home />).root
-    const h1 = root.findByType('h1')
-    const p = root.findByType('p')
-    expect(h1.children[0]).toBe('Welcome')
-    expect(p.children[0]).toBe('Template vs. 1.0.0')
-  })
-})
 ```
 
 ### <a>Extensions for VSCode recommended</a>
